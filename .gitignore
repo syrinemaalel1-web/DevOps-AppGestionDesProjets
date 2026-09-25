@@ -1,0 +1,43 @@
+# ========================
+# DevOps Project - Root .gitignore
+# ========================
+
+# Java / Maven build output
+target/
+*.class
+*.jar
+*.war
+*.ear
+
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# VS Code
+.vscode/
+
+# Eclipse
+.classpath
+.project
+.settings/
+.factorypath
+
+# Environment / Sensitive files
+.env
+.env.*
+*.env
+*.secret
+*.key
+
+# Node modules
+node_modules/
+
+# Angular build output
+/frontend/dist/
+/frontend/.angular/cache/
+
+# OS files
+.DS_Store
+Thumbs.db
