@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    environment {
+        IMAGE_NAME = 'devops-appgestion-backend'
+    }
+
     stages {
 
         stage('Récupération du projet') {
@@ -27,6 +31,15 @@ pipeline {
                 }
             }
         }
+
+        stage('Build Image Docker') {
+            steps {
+                echo 'Construction de l image Docker...'
+                dir('backend') {
+                    sh 'docker build -t ${IMAGE_NAME}:${BUILD_NUMBER} -t ${IMAGE_NAME}:latest .'
+                }
+            }
+        }
     }
 
     post {
@@ -39,5 +52,3 @@ pipeline {
         }
     }
 }
-
-
